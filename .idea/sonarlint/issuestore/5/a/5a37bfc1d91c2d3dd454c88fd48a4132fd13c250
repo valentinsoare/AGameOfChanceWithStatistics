@@ -1,0 +1,7 @@
+
+_
+java:S1192;"IDefine a constant instead of duplicating this literal "%n%s%s%n" 3 times.(Ã¢·î
+Œ
+java:S1319K"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(ùğÜúÿÿÿÿ
+‡
+java:S1319O"qThe return type of this method should be an interface such as "List" rather than the implementation "LinkedList".(â¼€ˆ

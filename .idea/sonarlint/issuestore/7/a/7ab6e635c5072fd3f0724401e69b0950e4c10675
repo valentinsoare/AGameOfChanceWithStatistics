@@ -1,0 +1,29 @@
+
+k
+java:S1192ì"MDefine a constant instead of duplicating this literal "%n%s%s%s%s%s" 3 times.(ÿç» 8¬˜–ÁÅ1
+k
+java:S1192¾"HDefine a constant instead of duplicating this literal "%n%s%s" 16 times.(¶©ò·ıÿÿÿÿ8­˜–ÁÅ1
+f
+java:S1192"HDefine a constant instead of duplicating this literal ", Age: " 3 times.(¹Öº¼8­˜–ÁÅ1
+w
+java:S1192g"ZDefine a constant instead of duplicating this literal "playing the game of craps" 8 times.(ÉÁÎ§8­˜–ÁÅ1
+l
+java:S1192v"ODefine a constant instead of duplicating this literal "\033[H\033[2J" 10 times.(Îœò—8­˜–ÁÅ1
+m
+java:S1192"ODefine a constant instead of duplicating this literal ", Occupation: " 3 times.(¹Öº¼8­˜–ÁÅ1
+g
+java:S1192Á"IDefine a constant instead of duplicating this literal "%n%s%s%s" 4 times.(¥¡Ï8­˜–ÁÅ1
+u
+java:S3776˜"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ğ¾À¡øÿÿÿÿ8½˜–ÁÅ1
+B
+java:S1659™"Declare "j" on a separate line.(á”æåşÿÿÿÿ8¾˜–ÁÅ1
+d
+java:S1117¯"ARename "valueFromUser" which hides the field declared at line 33.(à·¿–úÿÿÿÿ8Ã˜–ÁÅ1
+N
+java:S1172…"1Remove this unused method parameter "allPlayers".(”ƒ­|8É˜–ÁÅ1
+u
+java:S3776Ó"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(œÙÄ’ûÿÿÿÿ8Ë˜–ÁÅ1
+p
+java:S3776’"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(£ß™’8Ì˜–ÁÅ1
+u
+java:S3776Ê"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(ÖÊé±úÿÿÿÿ8Î˜–ÁÅ1
