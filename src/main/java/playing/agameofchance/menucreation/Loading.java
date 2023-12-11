@@ -101,7 +101,7 @@ public class Loading {
     }
 
     /**
-     * Validate the main message from the loading effect.
+     * Validate the main message from the loading` effect.
      */
     public String setMessageMainLoading(String messageMainLoading, boolean forConstructor) {
         StringBuilder valueToReturn = new StringBuilder();
