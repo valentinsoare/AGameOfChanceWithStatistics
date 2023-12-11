@@ -6,6 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * This is made for creating submenu and it is inheriting from Menu class
+ */
 public class SubMenu extends Menu {
     private LinkedList<String> optionsOnOneLine;
     private String content;

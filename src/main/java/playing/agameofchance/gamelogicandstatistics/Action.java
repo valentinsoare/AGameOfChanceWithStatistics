@@ -34,8 +34,15 @@ public class Action {
     private Scanner input;
     private int emptySpaces;
     private final List<Player> registeredPlayers;
+
+    /**
+    In this list will be added all the modules from this app, in other words, all the submenus.
+     */
     private final List<SubMenu> modules;
 
+    /**
+    Here we defined the modules as references.
+     */
     private SubMenu useHelp;
     private SubMenu registerPlayer;
     private SubMenu printingPlayers;
@@ -45,7 +52,7 @@ public class Action {
     private SubMenu printingStatistics;
     private SubMenu afterPrintingStatistics;
 
-    /*
+    /**
     Here in this construction phase there we set a scanner and we are using it to catch the input from user.
 
     The number of empty spaces printed from the left is set and as you can see we have validation for it on
@@ -70,7 +77,7 @@ public class Action {
         this.modules = new ArrayList<>(getModules());
     }
 
-    /*
+    /**
     Modules are created and load into the list of modules.
      */
     private void addingModules() throws InterruptedException {
@@ -87,7 +94,7 @@ public class Action {
                  playGame, printingStatistics, afterPrintingStatistics));
     }
 
-    /*
+    /**
     Creating the help module, which is in fact a submenu/secondary menu/an option from the main menun.
      */
     private void creatingHelpModule() throws InterruptedException {
@@ -103,7 +110,7 @@ public class Action {
         useHelp.addContent(contentToBeSet, false);
     }
 
-    /*
+    /**
     Here we are executing the help module and use is accordingly
      */
     void help() throws InterruptedException {
@@ -128,7 +135,7 @@ public class Action {
         }
     }
 
-    /*
+    /**
     Creating the player module and then it is loaded.
      */
     private void creatingRegisterPlayerModule() throws InterruptedException {
@@ -139,7 +146,7 @@ public class Action {
         registerPlayer.addOptionsForSubMenu("name, age, occupation");
     }
 
-    /*
+    /**
     Here we check/validate the following param which are given by the player, name, age and occupation.
      */
     private void validateNameAgeOccupationWhenAddPlayer(String errorMessage, List<String> tempOptions) throws InterruptedException {
@@ -191,7 +198,7 @@ public class Action {
         }
     }
 
-    /*
+    /**
     Here we are creating the players using the input from the user, like name, age and occupation.
      */
     private void creatingPlayers() throws InterruptedException {
@@ -211,7 +218,7 @@ public class Action {
         }
     }
 
-    /*
+    /**
     Here is the registerPlayer module and we are executing it from the main menu. Exception is push up the stack
      */
     void registerPlayers() throws InterruptedException {
@@ -235,7 +242,7 @@ public class Action {
         }
     }
 
-    /*
+    /**
     We are creating and load the printingPlayersModule.
      */
     private void creatingPrintPlayersModule() throws InterruptedException {
@@ -245,7 +252,7 @@ public class Action {
                 2, 2, 2, false);
     }
 
-    /*
+    /**
     Executing the printingPlayers module from the main menu.
      */
     void printingPlayers() throws InterruptedException {
@@ -279,7 +286,7 @@ public class Action {
         }
     }
 
-    /*
+    /**
     changePlayerModule is created and then loaded and prepared to be used.
      */
     private void creatingChangePlayerModule() throws InterruptedException {
@@ -289,7 +296,7 @@ public class Action {
         changePlayer.addOptionsForSubMenu("back, quit");
     }
 
-    /*
+    /**
     Implementing the interaction with the player when he's trying to change the current player.
      */
     private String actOnChangePlayer() throws InterruptedException {
@@ -330,7 +337,7 @@ public class Action {
         return valueFromUser;
     }
 
-    /*
+    /**
     Running the changingPlayer module.
      */
     void changePlayer() throws InterruptedException {
@@ -367,7 +374,7 @@ public class Action {
         }
     }
 
-    /*
+    /**
     How many games to play module creation.
      */
     private void creatingHowManyTimesToPlayModule() throws InterruptedException {
@@ -378,7 +385,7 @@ public class Action {
         askHowManyTimesToPlay.addContent(String.format("%s", "Please you need to tell us how many games you want to be played. Statistics will be calculated."), false);
     }
 
-    /*
+    /**
     Running the module howManyGamesToPlay.
      */
     private int howManyGamesToBePlay() throws InterruptedException {
@@ -421,7 +428,7 @@ public class Action {
         return numberOfGames;
     }
 
-    /*
+    /**
     In other words creating the module where the game of craps is running.
      */
     private void creatingPlayingTheGameModule() throws InterruptedException {
@@ -432,7 +439,7 @@ public class Action {
         playGame.addOptionsForMenu("play again, return to how many games to play, back to main menu, quit");
     }
 
-    /*
+    /**
     Running what it can be done after the games are played and several options are given.
      */
     private String actOnAfterGamesWherePlayed(String inputFromUser, int numberOfGamesToPlay) throws InterruptedException {
@@ -464,7 +471,7 @@ public class Action {
         return valueToReturn;
     }
 
-    /*
+    /**
     Printing the options that a player have after a set of games are played.
      */
     private String printOptionsAfterPlayingGamesOfCraps(int numberOfGamesToPlay) throws InterruptedException {
@@ -495,7 +502,7 @@ public class Action {
         return valueToCheck;
     }
 
-    /*
+    /**
     Creating statistics module.
      */
     private void creatingAfterPrintingStatisticsModule() throws InterruptedException {
@@ -504,7 +511,7 @@ public class Action {
                 2, 2, 0, false);
     }
 
-    /*
+    /**
     Reset all the stats for registered players.
      */
     private void resetStats(Player playerToResetStatsFor, boolean allPlayers) throws InterruptedException {
@@ -516,7 +523,7 @@ public class Action {
         Thread.sleep(200);
     }
 
-    /*
+    /**
     Choose what we should do after stats are reseted.
      */
     public String decideAfterResettingStatistics(Player playerToResetStatsFor, boolean allPlayers) throws InterruptedException {
@@ -545,7 +552,7 @@ public class Action {
         return valueToReturn;
     }
 
-    /*
+    /**
     Print statistics for chosen player.
      */
     private void printTotalAllStats(Player playerToPrintStatsFor) throws InterruptedException {
@@ -553,7 +560,7 @@ public class Action {
         playerToPrintStatsFor.getStatisticsForPlayer().printTotalAllStatistics();
     }
 
-    /*
+    /**
     Decide what can be done after the printing of stats.
      */
     public String decideAfterPrintingStatistics(Player playerToPrintStatsFor, boolean allPlayers) throws InterruptedException {
@@ -582,7 +589,7 @@ public class Action {
         return checkingValue;
     }
 
-    /*
+    /**
     Running the stats calculation and printing.
      */
     private String actOnPrintingStatsFromMenu(String inputFromUser, boolean forPrint) throws InterruptedException {
@@ -626,7 +633,7 @@ public class Action {
         return valueReTurnToMain;
     }
 
-    /*
+    /**
     Check before printing statistics to see if any players are registered.
      */
     private boolean checksBeforeActionOnStatistics() throws InterruptedException {
@@ -645,7 +652,7 @@ public class Action {
         return toReturn;
     }
 
-    /*
+    /**
     Printing statistics for all registered players.
      */
     public void printStatisticsForPlayers(boolean forPrint) throws InterruptedException {
@@ -680,7 +687,7 @@ public class Action {
         }
     }
 
-    /*
+    /**
     Create printing statistics module and load into the app.
      */
     private void creatingPrintingStatisticsFromMenuModule() throws InterruptedException {
@@ -691,7 +698,7 @@ public class Action {
         printingStatistics.addOptionsForMenu("all players, back, quit");
     }
 
-    /*
+    /**
     Method that is printing the stats.
      */
     private void printStatisticsSubMethod() throws InterruptedException {
@@ -701,7 +708,7 @@ public class Action {
         playGame.getCurrentPlayer().getStatisticsForPlayer().calculateStatisticsForNumberOfGamesPlayedAndPrintThem(lengthOfSeparator, separatorChar);
     }
 
-    /*
+    /**
     With this method we are playing the game of craps from which we are generating the stats.
      */
     public void playTheGames(boolean toAskForNumberOfGames) throws InterruptedException {
@@ -803,7 +810,7 @@ public class Action {
         return List.copyOf(modules);
     }
 
-    /*
+    /**
     On this we act on input from the player but on main menu. This is the gate to the entire app.
      */
     public String actOnInputFromMenu() throws InterruptedException {

@@ -8,6 +8,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * We define the player with several attributes that are given when the player is registered.
+ */
 public class Player implements Comparable<Player> {
     private String name;
     private int age;

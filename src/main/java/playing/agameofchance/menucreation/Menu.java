@@ -8,6 +8,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * We use this class to create the menu with options given.
+ * On each method where we set an attribute, validate is present and then if something is wrong, error message is displayed.
+ * Each method name describes the purpose it has on for this app.
+ */
 public class Menu {
     private Integer numberOfEntriesInTheMenu;
     private LinkedList<String> optionsForMenu;

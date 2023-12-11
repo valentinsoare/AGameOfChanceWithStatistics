@@ -8,6 +8,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Game of Craps class that will execute the game logic and gather statistics which are saved, put into arrays.
+ */
 public class Craps {
     private int howManyGameOfCrapsToPlay;
     private int emptySpaces;
@@ -15,6 +18,10 @@ public class Craps {
     private SecureRandom rnd;
     private Player currentPlayer;
 
+    /**
+    We create a 'craps' object, which is actually a game of craps and we take as an input the number of games to be played,
+    empty spaces from the left of the screen and the current player chosen to play.
+     */
     public Craps(int howManyGameOfCrapsToPlay, int emptySpaces, Player currentPlayer) throws InterruptedException {
         this.howManyGameOfCrapsToPlay = setHowManyGameOfCrapsToPlay(howManyGameOfCrapsToPlay, true);
         this.emptySpaces = setEmptySpaces(emptySpaces, true);
@@ -23,6 +30,9 @@ public class Craps {
         this.currentPlayer = currentPlayer;
     }
 
+    /**
+    We validate and set the number of empty spaces.
+     */
     public int setEmptySpaces(int emptySpaces, boolean forConstructor) throws InterruptedException {
         int valueToReturn = 2;
         String errorMessage = String.format("%n%s%s%n", " ".repeat(getEmptySpaces()), "ERROR please use a value equal or greater than zero!");
@@ -41,6 +51,9 @@ public class Craps {
         return valueToReturn;
     }
 
+    /**
+    Same thing here we validate the numberOfGamesToBePlayed from the user.
+     */
     public int setHowManyGameOfCrapsToPlay(int howManyGameOfCrapsToPlay, boolean forConstructor) throws InterruptedException {
         int valueToReturn = 1;
         String errorMessage = String.format("%n%s%s%n", " ".repeat(getEmptySpaces()), "ERROR the number of games to play should be greater than zero, if not it will default to 100!");
@@ -83,6 +96,9 @@ public class Craps {
         return rnd;
     }
 
+    /**
+    We roll both dices with SecureRandom library to have an organic random value.
+     */
     private List<Integer> rollTheDice() {
         int dice1 = rnd.nextInt(6) + 1;
         int dice2 = rnd.nextInt( 6) + 1;
@@ -90,6 +106,10 @@ public class Craps {
         return new ArrayList<>(Arrays.asList(dice1, dice2));
     }
 
+    /**
+    Here we are playing the game. This is the logic from the game of craps.
+    Statistics are registered/saved on this phase.
+     */
     public void playingTheGame() {
         boolean isGone;
         List<Integer> dices;

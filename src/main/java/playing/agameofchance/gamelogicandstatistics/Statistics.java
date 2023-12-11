@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * We use it to save stats from the games and then calculate what we need before printing.
+ * Also there is a history of games and stats for each player registered.
+ */
 public class Statistics {
     private Integer numbersOfGamesSetToBePlayed;
     private int[] gamesWonOnRoll;
@@ -22,6 +26,9 @@ public class Statistics {
         this(0, emptySpaces);
     }
 
+    /**
+     * As you can see we initiate all the storage arrays in order to put those stats from played games.
+     */
     public Statistics(int numbersOfGamesSetToBePlayed, int emptySpaces) {
         this.numbersOfGamesSetToBePlayed = setNumbersOfGamesSetToBePlayed(numbersOfGamesSetToBePlayed, true);
         this.gamesWonOnRoll = new int[100];
@@ -44,6 +51,9 @@ public class Statistics {
         return gamesWonOnRoll;
     }
 
+    /**
+     * We reset some counters that we used for calculating the change of winning or loosing at craps on a specific roll.
+     */
     public void resetCountersForANewInstance() {
         this.numbersOfGamesSetToBePlayed = 0;
         this.gamesWonOnRoll = new int[100];
@@ -78,6 +88,9 @@ public class Statistics {
         this.nrOfInstances += 1;
     }
 
+    /**
+     * We validate the number of games to be played and set it.
+     */
     public int setNumbersOfGamesSetToBePlayed(Integer numbersOfGamesSetToBePlayed, boolean forConstructor) {
         Integer valueToReturn = numbersOfGamesSetToBePlayed;
 
@@ -92,6 +105,9 @@ public class Statistics {
         return valueToReturn;
     }
 
+    /*
+    Validate empty spaces from user and then set it.
+     */
     public int setEmptySpace(int givenValue, boolean forConstructor) {
         int valueToReturn = givenValue;
 
@@ -106,6 +122,9 @@ public class Statistics {
         return valueToReturn;
     }
 
+    /**
+     * We process and prepare for calc the counters from games.
+     */
     private List<int[]> processTheArraysForCurrentWinsAndLosses(boolean forConstructor) {
         int[] newArr = {}; int indexWhereToCut;
         this.toBeProcessedForCalcStats = new ArrayList<>(Arrays.asList(gamesWonOnRoll, gamesLostOnRoll));
@@ -129,6 +148,9 @@ public class Statistics {
         return toBeProcessedForCalcStats;
     }
 
+    /**
+     * We add to history current stats.
+     */
     public void addToHistoryNumberOfRollsAndGamesPlayed() {
         processTheArraysForCurrentWinsAndLosses(false);
 
@@ -137,6 +159,9 @@ public class Statistics {
         this.historyOfNumberOfGames[nrOfInstances] = getNumbersOfGamesSetToBePlayed();
     }
 
+    /**
+     * Calculate the wins and losses per instance played.
+     */
     private double[] findWinsAndLossesPerInstance(boolean forConstructor) {
         int sum;
         double[] numberOfWinsAndLossesAlongWithChances = new double[4];
@@ -156,10 +181,16 @@ public class Statistics {
         return numberOfWinsAndLossesAlongWithChances;
     }
 
+    /**
+     * Adding the average length after it has been calculated.
+     */
     public void addAverageLengthPerInstance(double averageLength) {
         this.averageLengthOfTheGameOfCraps[nrOfInstances] = averageLength;
     }
 
+    /**
+     * Printing the number of wins and losses per each roll.
+     */
     public void printNumberOfWinsAndLossesPerRoll(String typeOfPrint) {
         String printingType = "Wins";
         int[] arrayToWorkWith = gamesWonOnRoll;
@@ -200,6 +231,9 @@ public class Statistics {
         return historyOfNumberOfGames;
     }
 
+    /**
+     * Calculating all the stats using the storage arrays where we save the counters values.
+     */
     public void calculateStatisticsForNumberOfGamesPlayedAndPrintThem(int lengthOfSeparator, String separator) throws InterruptedException {
         findWinsAndLossesPerInstance(false);
 
@@ -219,6 +253,9 @@ public class Statistics {
         System.out.printf("%n%s%s%n", " ".repeat(getEmptySpaces()), separator.repeat(lengthOfSeparator));
     }
 
+    /**
+     * Printing winning chances per instance for all the games playued.
+     */
     private void printingChancesOfWinningAtCrapsTotalPerInstance() throws InterruptedException {
         System.out.printf("%n%s%s%12s%12s%s%s%n", " ".repeat(getEmptySpaces() + 4), "Games Played /", " Wins /", " Losses /" , " Chances For Winning /", " For Loosing");
 
@@ -233,6 +270,9 @@ public class Statistics {
         Thread.sleep(1000);
     }
 
+    /**
+     *Printing the average length of an instance
+     */
     private void printingAverageLengthOfInstance() throws InterruptedException {
         System.out.printf("%n%s%s%n", " ".repeat(getEmptySpaces() + 4), "Games Played / Average length");
 
@@ -254,6 +294,9 @@ public class Statistics {
         return toBeProcessedForCalcStats;
     }
 
+    /*
+     * Printing totalChances of winning at craps of all instances.
+     */
     private void printingTotalChancesOfWinningAtCraps() throws InterruptedException {
         System.out.printf("%n%s%s%12s%12s%s%s%n", " ".repeat(getEmptySpaces() + 3), "Games Played /", " Wins /", " Losses /" , " Chances For Winning /", " For Loosing");
 
@@ -266,6 +309,9 @@ public class Statistics {
         Thread.sleep(1000);
     }
 
+    /**
+     * Printing total average length of an instance.
+     */
     private void printingAverageTotalLengthOfAnInstance() throws InterruptedException {
         System.out.printf("%n%s%s%n", " ".repeat(getEmptySpaces() + 3), "Games Played / Average length");
 

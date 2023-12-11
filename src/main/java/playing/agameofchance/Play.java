@@ -4,6 +4,9 @@ import playing.agameofchance.gamelogicandstatistics.Action;
 import playing.agameofchance.menucreation.Loading;
 import playing.agameofchance.menucreation.Menu;
 
+/**
+ * From this we lunch the game and give the control to the Action class from the 'gamelogicandstatistics' package
+ */
 public class Play {
     public static void main(String[] args) throws InterruptedException {
         String valueToCheck = "";

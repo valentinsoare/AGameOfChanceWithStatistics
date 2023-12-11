@@ -7,7 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
+/**
+ * This is the header object which is used on the menu, but it can be customized taking into consideration where it is used,
+ * like menu or submenu.
+ */
 public class Header {
     private String messageToBeUsed;
     private String additionCharactersInFrontAndBack;
@@ -16,6 +19,9 @@ public class Header {
     private int emptySpacesAbove;
     private int emptySpacesBellow;
 
+    /**
+     * We build the object with custom messages, chars and empty spaces used to display the appropriate header.
+     */
     public Header(String messageToBeUsed, String additionCharactersInFrontAndBack, String separatingWithCharacters,
                   int emptySpaces, int emptySpacesAbove, int emptySpacesBellow) throws InterruptedException {
         this.additionCharactersInFrontAndBack = setAdditionCharactersInFrontAndBack(additionCharactersInFrontAndBack, true);
@@ -25,6 +31,10 @@ public class Header {
         this.emptySpacesAbove = setEmptySpaces(emptySpacesAbove, true);
         this.emptySpacesBellow = setEmptySpaces(emptySpacesAbove, true);
     }
+
+    /**
+     * We validate and set the message to be used on header.
+     */
     public String setMessageToBeUsed(String messageToBeUsed, boolean forConstructor, boolean ifSubMenu) {
         List<String> temp;
         StringBuilder valueToReturn;
@@ -73,6 +83,9 @@ public class Header {
         return valueToReturn.toString();
     }
 
+    /**
+     * We validate the chars that are using for separating the header
+     */
     private String validateAuxiliaryChars(String givenValue) throws InterruptedException {
         String valueToReturn = " # ";
         String errorMessage = String.format("%n%s%s%n", " ".repeat(getEmptySpaces()), "ERROR please use a non-alphabetical char for this. It is default to #!");
@@ -87,6 +100,9 @@ public class Header {
         return valueToReturn;
     }
 
+    /**
+     * Validate and set the chars that are put in front and in the back of the message from header.
+     */
     public String setAdditionCharactersInFrontAndBack(String additionCharactersInFrontAndBack, boolean forConstructor) throws InterruptedException {
         String valueToReturn = validateAuxiliaryChars(additionCharactersInFrontAndBack);
 
@@ -97,6 +113,9 @@ public class Header {
         return valueToReturn;
     }
 
+    /**
+    Here we set the chars which we validate for separation.
+     */
     public String setSeparatingWithCharacters(String separatingWithCharacters, boolean forConstructor) throws InterruptedException {
         String valueToReturn = validateAuxiliaryChars(separatingWithCharacters);
 
@@ -107,6 +126,9 @@ public class Header {
         return valueToReturn;
     }
 
+    /**
+     * Validate and set the empty spaces.
+     */
     public int setEmptySpaces(int emptySpaces, boolean forConstructor) throws InterruptedException {
         int valueToReturn = 2;
         String errorMessage = String.format("%n%s%s%%n", " ".repeat(2), "ERROR please use a value equal or greater to zero. In this case it will default to 2!");
@@ -161,6 +183,9 @@ public class Header {
         printHeaderWithAllItsTrimmings(null, false, getEmptySpacesAbove(), getEmptySpacesBellow(), 2);
     }
 
+    /**
+     * Printing the header.
+     */
     public void printHeaderWithAllItsTrimmings(String subMenuMessageToBeUsed, boolean ifSubMenu,
                                                int emptySpacesAbove, int emptySpacesBellow, int emptySpaceSubHeaders) throws InterruptedException {
         int numberOfCharsForLine = getMessageToBeUsed().length();

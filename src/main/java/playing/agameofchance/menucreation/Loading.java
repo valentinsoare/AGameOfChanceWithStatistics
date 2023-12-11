@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Loading effect used after each integration between player and the app.
+ */
 public class Loading {
     private Character passed;
     private Character notPassed;
@@ -15,6 +18,9 @@ public class Loading {
         this.passed = setPassed(passed, true);
     }
 
+    /**
+     * Here we run the loading effect which is a progress bar used at the start of the application
+     */
     public void loadProgressBar(int barSize, int emptySpaceBellow, int emptySpaceAbove, int emptySpaceInFront) throws InterruptedException {
         String toBePrinted;
         int status, move;
@@ -40,6 +46,10 @@ public class Loading {
         Thread.sleep(1000);
     }
 
+    /**
+     * Here is the effect run after each interaction between player and app. It is using a char from user to animate
+     * the loading effect with a message in front of it.
+     */
     public static void starting(int numberOfChars, char charFromUser, String messageInFront,
                                 int timeToSleep, boolean ifDone, String messageEnd) throws InterruptedException {
         System.out.printf("%s", messageInFront);
@@ -56,6 +66,9 @@ public class Loading {
         }
     }
 
+    /**
+    We validate the char that is used to display a pass portion from loading with progress bar.
+     */
     public char setPassed(Character passed, boolean forConstructor) {
         Character valueToReturn = passed;
 
@@ -70,6 +83,9 @@ public class Loading {
         return valueToReturn;
     }
 
+    /**
+     * Same thing like above, but char is for a portion that the current progress didn't reach.
+     */
     public char setNotPassed(Character notPassed, boolean forConstructor) {
         Character valueToReturn = notPassed;
 
@@ -84,6 +100,9 @@ public class Loading {
         return valueToReturn;
     }
 
+    /**
+     * Validate the main message from the loading effect.
+     */
     public String setMessageMainLoading(String messageMainLoading, boolean forConstructor) {
         StringBuilder valueToReturn = new StringBuilder();
 
