@@ -1,5 +1,5 @@
 
 e
-java:S1192ó"IDefine a constant instead of duplicating this literal "%n%s%s%n" 8 times.(Äí–øÿÿÿÿ
-D
-java:S1659"-Declare "indexWhereToCut" on a separate line.(Úüàë
+java:S1192Ğ"IDefine a constant instead of duplicating this literal "%n%s%s%n" 8 times.(Äí–øÿÿÿÿ
+C
+java:S1659r"-Declare "indexWhereToCut" on a separate line.(Úüàë

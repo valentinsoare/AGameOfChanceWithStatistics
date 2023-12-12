@@ -1,5 +1,6 @@
 package playing.agameofchance.menucreation;
 
+import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -11,6 +12,8 @@ import java.util.concurrent.TimeUnit;
  * This is the header object which is used on the menu, but it can be customized taking into consideration where it is used,
  * like menu or submenu.
  */
+
+@Getter
 public class Header {
     private String messageToBeUsed;
     private String additionCharactersInFrontAndBack;
@@ -147,32 +150,8 @@ public class Header {
         return valueToReturn;
     }
 
-    public int getEmptySpaces() {
-        return emptySpaces;
-    }
-
-    public String getAdditionCharactersInFrontAndBack() {
-        return additionCharactersInFrontAndBack;
-    }
-
-    public String getMessageToBeUsed() {
-        return messageToBeUsed;
-    }
-
-    public String getSeparatingWithCharacters() {
-        return separatingWithCharacters;
-    }
-
-    public int getEmptySpacesAbove() {
-        return emptySpacesAbove;
-    }
-
     public void setEmptySpacesAbove(int emptySpacesAbove) throws InterruptedException {
         this.emptySpacesAbove = setEmptySpaces(emptySpacesAbove, false);
-    }
-
-    public int getEmptySpacesBellow() {
-        return emptySpacesBellow;
     }
 
     public void setEmptySpacesBellow(int emptySpacesBellow) throws InterruptedException {

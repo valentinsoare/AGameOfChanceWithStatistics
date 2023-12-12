@@ -1,7 +1,0 @@
-
-S
-java:S1172"8Remove this unused method parameter "emptySpacesBellow".(¢²¹ıÿÿÿÿ
-g
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(²Û˜?
-“
-java:S1130¥"wRemove the declaration of thrown exception 'java.lang.InterruptedException', as it cannot be thrown from method's body.(»î©Ìùÿÿÿÿ

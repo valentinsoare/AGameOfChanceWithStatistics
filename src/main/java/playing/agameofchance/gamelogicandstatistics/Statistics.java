@@ -1,5 +1,7 @@
 package playing.agameofchance.gamelogicandstatistics;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +10,10 @@ import java.util.List;
  * We use it to save stats from the games and then calculate what we need before printing.
  * Also there is a history of games and stats for each player registered.
  */
+
+@Getter
 public class Statistics {
+
     private Integer numbersOfGamesSetToBePlayed;
     private int[] gamesWonOnRoll;
     private int[] gamesLostOnRoll;
@@ -43,14 +48,6 @@ public class Statistics {
         this.historyNumberOfWinsAndLossesPerInstanceAndChances = new double[100][];
     }
 
-    public Integer getNumbersOfGamesSetToBePlayed() {
-        return numbersOfGamesSetToBePlayed;
-    }
-
-    public int[] getGamesWonOnRoll() {
-        return gamesWonOnRoll;
-    }
-
     /**
      * We reset some counters that we used for calculating the change of winning or loosing at craps on a specific roll.
      */
@@ -60,24 +57,12 @@ public class Statistics {
         this.gamesLostOnRoll = new int[100];
     }
 
-    public int[] getGamesLostOnRoll() {
-        return gamesLostOnRoll;
-    }
-
-    public double[] getAverageLengthOfTheGameOfCraps() {
-        return averageLengthOfTheGameOfCraps;
-    }
-
     public void addWin(int numberOfRoll) {
         ++this.gamesWonOnRoll[numberOfRoll];
     }
 
     public void addLoss(int numberOfRoll) {
         ++this.gamesLostOnRoll[numberOfRoll];
-    }
-
-    public Integer getNumberOfGamesPlayed() {
-        return numberOfGamesPlayed;
     }
 
     public void addAGamePlayed() {
@@ -105,7 +90,7 @@ public class Statistics {
         return valueToReturn;
     }
 
-    /*
+    /**
     Validate empty spaces from user and then set it.
      */
     public int setEmptySpace(int givenValue, boolean forConstructor) {
@@ -211,26 +196,6 @@ public class Statistics {
         }
     }
 
-    public Integer getEmptySpaces() {
-        return emptySpaces;
-    }
-
-    public Integer getNrOfInstances() {
-        return nrOfInstances;
-    }
-
-    public int[][] getHistoryGamesWonOnRoll() {
-        return historyGamesWonOnRoll;
-    }
-
-    public int[][] getHistoryGamesLostOnRoll() {
-        return historyGamesLostOnRoll;
-    }
-
-    public int[] getHistoryOfNumberOfGames() {
-        return historyOfNumberOfGames;
-    }
-
     /**
      * Calculating all the stats using the storage arrays where we save the counters values.
      */
@@ -290,11 +255,7 @@ public class Statistics {
         return historyNumberOfWinsAndLossesPerInstanceAndChances;
     }
 
-    public List<int[]> getToBeProcessedForCalcStats() {
-        return toBeProcessedForCalcStats;
-    }
-
-    /*
+    /**
      * Printing totalChances of winning at craps of all instances.
      */
     private void printingTotalChancesOfWinningAtCraps() throws InterruptedException {

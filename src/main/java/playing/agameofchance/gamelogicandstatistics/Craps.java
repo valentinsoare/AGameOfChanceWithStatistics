@@ -1,5 +1,6 @@
 package playing.agameofchance.gamelogicandstatistics;
 
+import lombok.Getter;
 import playing.agameofchance.players.Player;
 
 import java.security.SecureRandom;
@@ -11,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Game of Craps class that will execute the game logic and gather statistics which are saved, put into arrays.
  */
+@Getter
 public class Craps {
     private int howManyGameOfCrapsToPlay;
     private int emptySpaces;
@@ -72,28 +74,8 @@ public class Craps {
         return valueToReturn;
     }
 
-    public int getHowManyGameOfCrapsToPlay() {
-        return howManyGameOfCrapsToPlay;
-    }
-
-    public Player getCurrentPlayer() {
-        return currentPlayer;
-    }
-
-    public int getEmptySpaces() {
-        return emptySpaces;
-    }
-
-    public int getNumberOfGamesPlayedAlready() {
-        return numberOfGamesPlayedAlready;
-    }
-
     public void setNumberOfGamesPlayedAlready(int numberOfGamesPlayedAlready) {
         this.numberOfGamesPlayedAlready = numberOfGamesPlayedAlready;
-    }
-
-    public SecureRandom getRnd() {
-        return rnd;
     }
 
     /**

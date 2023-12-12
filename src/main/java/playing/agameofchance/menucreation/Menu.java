@@ -1,5 +1,6 @@
 package playing.agameofchance.menucreation;
 
+import lombok.Getter;
 import playing.agameofchance.players.Player;
 
 import java.util.ArrayList;
@@ -13,6 +14,7 @@ import java.util.concurrent.TimeUnit;
  * On each method where we set an attribute, validate is present and then if something is wrong, error message is displayed.
  * Each method name describes the purpose it has on for this app.
  */
+@Getter
 public class Menu {
     private Integer numberOfEntriesInTheMenu;
     private LinkedList<String> optionsForMenu;
@@ -50,10 +52,6 @@ public class Menu {
         return valueToReturn;
     }
 
-    public Integer getEmptySpacesForMainMenu() {
-        return emptySpacesForMainMenu;
-    }
-
     public Integer setEmptySpacesForMainMenu(Integer emptySpacesForMainMenu, boolean forConstructor) throws InterruptedException {
         Integer valueToReturn = 2;
         String errorMessage = String.format("%n%s%s%n", " ".repeat(valueToReturn), "ERROR please use a value greater than zero for empty spaces!");
@@ -72,20 +70,12 @@ public class Menu {
         return valueToReturn;
     }
 
-    public LinkedList<String> getOptionsForMenu() {
-        return optionsForMenu;
-    }
-
     public LinkedList<String> setOptionsForMenu() {
         if (ifMainMenu) {
             this.optionsForMenu = new LinkedList<>();
         }
 
         return optionsForMenu;
-    }
-
-    public String getMessageAtTheBottom() {
-        return messageAtTheBottom;
     }
 
     public String printMessageAtTheBottom(boolean ifToPrint) {
@@ -125,14 +115,6 @@ public class Menu {
         return valueToReturn.toString();
     }
 
-    public boolean isIfMainMenu() {
-        return ifMainMenu;
-    }
-
-    public Integer getNumberOfEntriesInTheMenu() {
-        return numberOfEntriesInTheMenu;
-    }
-
     public void addOptionsForMenu(String givenOptions) {
         List<String> temporaryListWithOptions = new ArrayList<>(List.of(givenOptions.toLowerCase().trim().split(",")));
         StringBuilder optionToBeAdded;
@@ -157,10 +139,6 @@ public class Menu {
         }
     }
 
-    public Header getHeaderForGame() {
-        return headerForGame;
-    }
-
     public void printHeaderMenu() throws InterruptedException {
         getHeaderForGame().printHeaderWithAllItsTrimmings();
     }
@@ -174,10 +152,6 @@ public class Menu {
             this.currentPlayer = currentPlayer;
         }
 
-        return currentPlayer;
-    }
-
-    public Player getCurrentPlayer() {
         return currentPlayer;
     }
 

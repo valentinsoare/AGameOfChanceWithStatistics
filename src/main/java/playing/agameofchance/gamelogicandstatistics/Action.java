@@ -1,5 +1,6 @@
 package playing.agameofchance.gamelogicandstatistics;
 
+import lombok.Getter;
 import playing.agameofchance.players.Player;
 import playing.agameofchance.checks.AuxChecks;
 import playing.agameofchance.menucreation.Loading;
@@ -29,6 +30,7 @@ import java.util.concurrent.TimeUnit;
 
  * Name of the modules can be found on the declaration phase of references/attributes and are of type SubMenu.
  */
+@Getter
 public class Action {
     private String valueFromUser;
     private Scanner input;
@@ -758,16 +760,8 @@ public class Action {
         return List.copyOf(registeredPlayers);
     }
 
-    public String getValueFromUser() {
-        return valueFromUser;
-    }
-
     public void setValueFromUser(String valueFromUser) {
         this.valueFromUser = valueFromUser;
-    }
-
-    public Scanner getInput() {
-        return input;
     }
 
     public void setInput(Scanner input) {
@@ -784,10 +778,6 @@ public class Action {
         return valueToReturn;
     }
 
-    public int getEmptySpaces() {
-        return emptySpaces;
-    }
-
     public int setEmptySpaces(int emptySpaces, boolean forConstructor) {
         int valueToReturn = Math.max(emptySpaces, 0);
 
@@ -796,10 +786,6 @@ public class Action {
         }
 
         return valueToReturn;
-    }
-
-    public SubMenu getUseHelp() {
-        return useHelp;
     }
 
     public void setUseHelp(SubMenu useHelp) {

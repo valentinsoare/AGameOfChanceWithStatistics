@@ -17,6 +17,7 @@ and play only one game of craps or play multiple games set by the player.
 3. [X] Recursion;
 4. [X] Comparator and Iterator;
 5. [X] Lambda functions, Streams and Method references;
+6. [X] Third party libraries - Apache Commons Lang and Lombok;
 
 <br>
 

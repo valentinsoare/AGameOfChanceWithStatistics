@@ -1,5 +1,7 @@
 package playing.agameofchance.menucreation;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -9,18 +11,15 @@ import java.util.concurrent.TimeUnit;
 /**
  * This is made for creating submenu and it is inheriting from Menu class
  */
+@Getter
 public class SubMenu extends Menu {
-    private LinkedList<String> optionsOnOneLine;
+    private final LinkedList<String> optionsOnOneLine;
     private String content;
 
     public SubMenu(int numberOfEntriesInTheMenu, String messageAtTheBottom, int emptySpaceForMainMenu, boolean ifMainMenu) throws InterruptedException {
         super(numberOfEntriesInTheMenu, messageAtTheBottom, emptySpaceForMainMenu, ifMainMenu);
         this.optionsOnOneLine = new LinkedList<>();
         this.content = "";
-    }
-
-    public List<String> getOptionsOnOneLine() {
-        return optionsOnOneLine;
     }
 
     public void printOptionsForSubMenu(String givenMessage) {
@@ -40,10 +39,6 @@ public class SubMenu extends Menu {
     public void printSeparatedLineBottom() {
         System.out.printf("%n%n%s%s%s", " ".repeat(getEmptySpacesForMainMenu()), "player: ", getCurrentPlayer().getName());
         System.out.printf("%n%s%s", " ".repeat(getEmptySpacesForMainMenu()), getHeaderForGame().getSeparatingWithCharacters().repeat(getHeaderForGame().getMessageToBeUsed().length()));
-    }
-
-    public String getContent() {
-        return content;
     }
 
     private String processingContent(String givenContent) {

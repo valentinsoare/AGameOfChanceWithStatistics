@@ -1,5 +1,7 @@
 package playing.agameofchance.menucreation;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,6 +9,7 @@ import java.util.List;
 /**
  * Loading effect used after each integration between player and the app.
  */
+@Getter
 public class Loading {
     private Character passed;
     private Character notPassed;
@@ -121,9 +124,5 @@ public class Loading {
         }
 
         return valueToReturn.toString();
-    }
-
-    public String getMessageMainLoading() {
-        return messageMainLoading;
     }
 }
