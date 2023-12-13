@@ -195,9 +195,9 @@ and play only one game of craps or play multiple games set by the player.
   please choose an option from above: 
 ```
 
-:point_right: You can check the rest of the functionalities if you clone this repo and try it.
-
 <br>
+
+:point_right: You can check the rest of the functionalities if you clone this repo and try it.
 
 <br>
 
