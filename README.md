@@ -38,7 +38,7 @@ and play only one game of craps or play multiple games set by the player.
 
 <br>
 
-:white_check_mark: Main menu after the loading bar completed and there is no registered player.
+:white_check_mark: Main menu after the loading bar completed and there is no registered player;
 
 ```
   -------------------------------
@@ -62,7 +62,7 @@ and play only one game of craps or play multiple games set by the player.
 
 <br>
 
-:white_check_mark: Register a player.
+:white_check_mark: Register a player;
 
 ```
   -------------------------------
@@ -79,7 +79,7 @@ and play only one game of craps or play multiple games set by the player.
 
 <br>
 
-:white_check_mark: Set/Change a player after it is registered. You can have multiple registered players.
+:white_check_mark: Set/Change a player after it is registered. You can have multiple registered players;
 
 ```
   -------------------------------
@@ -98,7 +98,7 @@ and play only one game of craps or play multiple games set by the player.
 
 <br>
 
-:white_check_mark: Set the numbers of games to be played and the loading effect with dots when setting the parameter.
+:white_check_mark: Set the numbers of games to be played and the loading effect with dots when setting the parameter;
 
 ```
   -------------------------------
@@ -117,7 +117,7 @@ and play only one game of craps or play multiple games set by the player.
 
 <br>
 
-:white_check_mark: Printing statistics for those 50 games played.
+:white_check_mark: Printing statistics for those 50 games played;
 
 ```
 -------------------------------
@@ -178,7 +178,7 @@ and play only one game of craps or play multiple games set by the player.
 
 <br>
 
-:white_check_mark: Choose what to do after stats are printed.
+:white_check_mark: Choose what to do after stats are printed;
 ```
   -------------------------------
    * Playing The Game Of Craps * 
