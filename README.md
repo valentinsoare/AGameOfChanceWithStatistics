@@ -201,7 +201,7 @@ and play only one game of craps or play multiple games set by the player.
 
 <br>
 
-:arrow_forward: Class dependencies until now:
+:arrow_forward: Class dependencies until now ->
 
 [![class_dependencies](https://i.postimg.cc/4NJdztNN/Screenshot-from-2023-12-13-02-12-24.png)](moviesondemand.io)
 
